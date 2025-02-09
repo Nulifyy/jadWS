@@ -23,6 +23,7 @@ public class ServiceController {
 	
 	@RequestMapping(method=RequestMethod.GET, path="/service/{cat}")
 	public ArrayList<Service> listServiceByCat(@PathVariable("cat") String cat){
+		cat = cat.replace("+", " "); 
 		ArrayList<Service> myList = new ArrayList<>();
 		try {
 			ServiceDAO db = new ServiceDAO();
